@@ -20,7 +20,6 @@
 
 
         <div class="row">
-
             @if (isset($products))
                 @foreach ($products as $product)
                     <div class="col-4">
