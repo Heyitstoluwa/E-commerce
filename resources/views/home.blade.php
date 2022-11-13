@@ -63,22 +63,24 @@
         <h2 class="title">Latest Arrivals</h2>
         <div class="row">
             @if (isset($products))
-                @foreach ($products->slice(0, 10) as $product)
-                    <div class="col-4">
-                        <a href="{{ route('product', $product['id']) }}">
-                            <img src="{{ $product['images'][0] }}">
-                        </a>
-                        <h4>{{ $product['name'] }}</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+                @foreach ($products as $index => $product)
+                        @continue($loop->index == -1)
+                        <div class="col-4">
+                            <a href="{{ route('product', $product['id']) }}">
+                                <img src="{{ $product['images'][0] }}">
+                            </a>
+                            <h4>{{ $product['name'] }}</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
 
+                            </div>
+                            <p><b>₦{{ number_format($product['price'], 2) }}</b> Only</p>
                         </div>
-                        <p><b>₦{{ number_format($product['price'], 2) }}</b> Only</p>
-                    </div>
+                        @break($loop->index == 7)
                 @endforeach
             @else
             @endif
