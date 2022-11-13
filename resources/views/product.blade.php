@@ -84,7 +84,7 @@
         <div class="row">
             @if (isset($products))
                 @foreach ($products as $index => $product)
-                @continue($loop->index == -1)
+                    @continue($loop->index == -1)
                     <div class="col-4">
                         <a href="{{ route('product', $product['id']) }}">
                             <img src="{{ $product['images'][0] }}">
