@@ -3,27 +3,27 @@
     <div class="small-containers">
         <div class="row">
             <div class="col-5">
-                <img src="images/logo-godrej.png">
+                <img src="{{ asset('images/logo-godrej.png') }}">
 
             </div>
 
             <div class="col-5">
-                <img src="images/logo-paypal.png">
+                <img src="{{ asset('images/logo-paypal.png') }}">
 
             </div>
 
             <div class="col-5">
-                <img src="images/logo-coca-cola.png">
+                <img src="{{ asset('images/logo-coca-cola.png') }}">
 
             </div>
 
             <div class="col-5">
-                <img src="images/logo-philips.png">
+                <img src="{{ asset('images/logo-philips.png') }}">
 
             </div>
 
             <div class="col-5">
-                <img src="images/logo-oppo.png">
+                <img src="{{ asset('images/logo-oppo.png') }}">
 
             </div>
         </div>

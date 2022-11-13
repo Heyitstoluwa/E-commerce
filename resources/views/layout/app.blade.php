@@ -25,6 +25,7 @@
     @yield('content')
 
     @stack('style')
+    @stack('script')
 
     <!---------Testimony Region-------->
     @include('layout.includes.testimony')

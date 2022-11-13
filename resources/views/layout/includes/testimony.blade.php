@@ -12,7 +12,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <img src="images/user-1.png">
+                <img src="{{ asset('images/user-1.png') }}">
                 <h3>Nick Pope</h3>
             </div>
 
@@ -26,7 +26,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <img src="images/user-2.png">
+                <img src="{{ asset('images/user-2.png') }}">
                 <h3>Allison Sam</h3>
             </div>
 
@@ -40,7 +40,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <img src="images/user-3.png">
+                <img src="{{ asset('images/user-3.png') }}">
                 <h3>Micheal Eliah</h3>
             </div>
         </div>
