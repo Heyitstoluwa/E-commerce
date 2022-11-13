@@ -12,6 +12,8 @@ class HomeController extends Controller
         $data['title'] = "Home";
         $get_products = Storage::get('product.json');
         $data['products'] = $products = json_decode($get_products, true);
+        $get_feature = Storage::get('featured.json');
+        $data['featured_products'] = json_decode($get_feature, true);
         return view('home', $data);
     }
 

@@ -9,7 +9,7 @@
                     pellentesque elit ullamcorper dignissim cras. Laoreet non curabitur gravida arcu ac tortor
                     dignissim convallis. Pulvinar elementum integer enim neque. A iaculis at erat pellentesque
                     adipiscing commodo elit at imperdiet.</p>
-                <a href="products.html" class="btn">Explore Now &#8594;</a>
+                <a href="{{ route('products') }}" class="btn">Explore Now &#8594;</a>
 
             </div>
             <div class="col-2">
@@ -39,73 +39,31 @@
     <div class="small-containers">
         <h1 class="title">Featured Products</h1>
         <div class="row">
-            <div class="col-4">
-                <a href="product1.html">
-                    <img src="images/product-1.jpg">
-                </a>
-                <h4>Red Printed T-Shirt</h4>
+            @if (isset($featured_products))
+                @foreach ($featured_products as $product)
+                    <div class="col-4">
+                        <a href="{{ route('product', $product['id']) }}">
+                            <img src="{{ $product['images'][0] }}">
+                        </a>
+                        <h4>{{ $product['name'] }}</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
 
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-
-                </div>
-                <p>₦3,999 Only</p>
-            </div>
-            <div class="col-4">
-                <a href="product2.html">
-                    <img src="images/product-2.jpg">
-                </a>
-                <h4>Kinetix Sneaker Shoes</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>₦7,000 Only</p>
-            </div>
-
-
-            <div class="col-4">
-                <a href="product3.html">
-                    <img src="images/product-3.jpg">
-                </a>
-                <h4>Male Joggers Ash</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>₦5,999 Only</p>
-            </div>
-
-            <div class="col-4">
-                <a href="product4.html">
-                    <img src="images/product-4.jpg">
-                </a>
-                <h4>Blue T Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-
-                </div>
-                <p>₦9,999 Only</p>
-            </div>
+                        </div>
+                        <p><b>₦{{ number_format($product['price'], 2) }}</b> Only</p>
+                    </div>
+                @endforeach
+            @else
+            @endif
         </div>
         <h2 class="title">Latest Arrivals</h2>
         <div class="row">
             @if (isset($products))
-                @foreach ($products as $product)
+                @foreach ($products->slice(0, 10) as $product)
                     <div class="col-4">
                         <a href="{{ route('product', $product['id']) }}">
                             <img src="{{ $product['images'][0] }}">
