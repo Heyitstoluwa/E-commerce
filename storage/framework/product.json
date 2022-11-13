@@ -1,0 +1,132 @@
+[
+    {
+        "id": 78943689,
+        "name": "Red Printed T-Shirt",
+        "images": [
+            "http://127.0.0.1:8000/images/product-2.jpg",
+            "http://127.0.0.1:8000/images/product-2.jpg",
+            "http://127.0.0.1:8000/images/product-2.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "Kinetix Sneaker Shoes Men's Lazerm Brand: Kinetix Model: Shoes Clothing Style: Daily Sport Material: Textile Closure Info: Laced Base Info: Rubber DOMESTIC PRODUCTION 3S01LAZERM.486",
+        "price": 3999,
+        "quantity": 6
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt 345",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt 456",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt 456",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt 456",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+    {
+        "id": 8793673,
+        "name": "Red Printed T-Shirt 456",
+        "images": [
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg",
+            "http://127.0.0.1:8000/images/product-1.jpg"
+        ],
+        "size": ["XXL", "XL", "Medium", "Large", "Small"],
+        "details": "ulhkj jvgv hbasvhgdvs adghvas dghasvhgds hjgsah asjyc jkbhas ahsv asvhk ashk vdhsa bmnvshjag vghjsa hvsagj bvhvashgv hm asvghjv hmb sahg",
+        "price": 1200,
+        "quantity": 3
+    },
+]
