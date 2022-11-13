@@ -83,7 +83,8 @@
         </div>
         <div class="row">
             @if (isset($products))
-                @foreach ($products as $product)
+                @foreach ($products as $index => $product)
+                @continue($loop->index == -1)
                     <div class="col-4">
                         <a href="{{ route('product', $product['id']) }}">
                             <img src="{{ $product['images'][0] }}">
@@ -99,6 +100,7 @@
                         </div>
                         <p><b>₦{{ number_format($product['price'], 2) }}</b> Only</p>
                     </div>
+                    @break($loop->index == 3)
                 @endforeach
             @else
             @endif
