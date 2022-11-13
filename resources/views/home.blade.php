@@ -4,11 +4,8 @@
         <div class="row">
             <div class="col-2">
                 <h1>Give Your Feet <br>A New Balance!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Rhoncus est
-                    pellentesque elit ullamcorper dignissim cras. Laoreet non curabitur gravida arcu ac tortor
-                    dignissim convallis. Pulvinar elementum integer enim neque. A iaculis at erat pellentesque
-                    adipiscing commodo elit at imperdiet.</p>
+                <p>We serve a retail customer base that continues to grow exponentially, offering products that span various categories including, Clothing, shoes and much more. Our range of services are designed to ensure optimum levels of convenience and customer satisfaction with the retail process; these services include our lowest price guarantee, dedicated customer service support and many other premium services.
+We are highly customer-centric and are committed towards finding innovative ways of improving our customers' shopping experience with us; For any press related questions, kindly send us an email at using our contact us page.</p>
                 <a href="{{ route('products') }}" class="btn">Explore Now &#8594;</a>
 
             </div>
@@ -80,7 +77,7 @@
                             </div>
                             <p><b>₦{{ number_format($product['price'], 2) }}</b> Only</p>
                         </div>
-                        @break($loop->index == 7)
+                        @break($loop->index == 11)
                 @endforeach
             @else
             @endif
@@ -97,10 +94,9 @@
                 </div>
                 <div class="col-2">
                     <p>Exclusively Available on Store</p>
-                    <h1 clas> Smart man dem</h1>
-                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus.</small><br>
-                    <a href="" class="btn"> Buy Now &#128722;</a>
+                    <h1 clas>Smart Watch First Gen</h1>
+                    <small>The Android Phone Wrist Watch is not just stylish but very effective and convenient, more like your Mobile Phone you can as well make and receive calls with Our A1 Smart Wristwatch and do a whole lot. It supports Bluetooth, Mp3, Sim Card and USB. Full Specifications Of The A1 Smart Wristwatch Type: Watch Phone CPU: MTK6261 External memory: Supports Up to 32GB MicroSD.</small><br>
+                    <a href="http://127.0.0.1:8000/product/4793673" class="btn"> Buy Now &#128722;</a>
                 </div>
 
             </div>
