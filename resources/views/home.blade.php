@@ -3,9 +3,9 @@
     @push('explore')
         <div class="row">
             <div class="col-2">
-                <h1>Give Your Feet <br>A New Balance!</h1>
+                <h1>Give Your Fashion <br>A New Balance!</h1>
                 <p>We serve a retail customer base that continues to grow exponentially, offering products that span various categories including, Clothing, shoes and much more. Our range of services are designed to ensure optimum levels of convenience and customer satisfaction with the retail process; these services include our lowest price guarantee, dedicated customer service support and many other premium services.
-We are highly customer-centric and are committed towards finding innovative ways of improving our customers' shopping experience with us; For any press related questions, kindly send us an email at using our contact us page.</p>
+<br>We are highly customer-centric and are committed towards finding innovative ways of improving our customers' shopping experience with us; For any press related questions, kindly send us an email at using our contact us page.</p>
                 <a href="{{ route('products') }}" class="btn">Explore Now &#8594;</a>
 
             </div>

@@ -2,8 +2,7 @@
 @section('content')
     @push('style')
         <link rel="stylesheet" href="{{ asset('css/product.css') }}">
-        <style>
-        </style>
+        
     @endpush
     <!----------Featured Product ---------->
     <h2 class="title">Carts</h2>
@@ -27,6 +26,14 @@
                         <td>Total</td>
                         <td><b style="font-size: 22px" id="totalPrice"></b></td>
                     </tr>
+                   
+</label>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="btn">Checkout &#128722;</a></td>
+                    </tr>    
                 </tbody>
             </table>
         </div>
