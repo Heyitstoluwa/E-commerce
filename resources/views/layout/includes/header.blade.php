@@ -16,6 +16,8 @@
                             href="{{ route('about') }}">About</a></li>
                     <li><a class="{{ request()->is('contact-us') ? 'active active-now' : '' }}"
                             href="{{ route('contact') }}">Contact</a></li>
+                    <li><a class="{{ request()->is('contact-us') ? 'active active-now' : '' }}"
+                            href="{{ route('contact') }}">Account</a></li>
                 </ul>
             </nav>
             <a href="{{ route('carts') }}">

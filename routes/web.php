@@ -23,3 +23,6 @@ Route::get('/product/{id}', [App\Http\Controllers\HomeController::class, 'produc
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
