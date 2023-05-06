@@ -19,7 +19,7 @@ class User
     {
         try {
             if (!Auth::user()) {
-                return $next($request);
+                return redirect('/login');
             }
             $role = Auth::user()->role;
             if ($role == "user") {

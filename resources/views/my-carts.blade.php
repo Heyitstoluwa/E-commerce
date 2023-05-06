@@ -102,9 +102,10 @@
                                 <thead>
                                     <tr>
                                         <th>S/N</th>
-                                        <th> Product </th>
-                                        <th> Qualtity </th>
-                                        <th>Subtotal </th>
+                                        <th>Product</th>
+                                        <th>Qualtity</th>
+                                        <th>Subtotal</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -123,7 +124,8 @@
                                         </td>
                                         </tr>
                                         <tr>
-                                            <td><button class="btn checkout" id="checkout-btn" onclick="payWithPaystack()">Checkout &#128722;</button></td>
+                                            <td><button class="btn checkout" id="checkout-btn"
+                                                    onclick="payWithPaystack()">Checkout &#128722;</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -134,7 +136,8 @@
             </div>
         </div>
     </div>
-    <input type="hiddend" id="checkout-amount" readonly>
+    <input type="hidden" id="checkout-products" readonly>
+    <input type="hidden" id="checkout-amount" readonly>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

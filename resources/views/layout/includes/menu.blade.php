@@ -9,8 +9,8 @@
                     class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2 mb-2 mt-1 {{ request()->is('account') ? 'side-menu-active' : '' }}">
                     <i
                         class="fe fe-arrow-right fs-14 me-4 p-1 border-success br-7 bg-success-transparent text-success"></i>
-                    My Profile </a> <a href="{{ route('my-orders') }}"
-                    class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2 mb-2 mt-1 {{ request()->is('my-orders') ? 'side-menu-active' : '' }}">
+                    My Profile </a> <a href="{{ route('orders') }}"
+                    class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2 mb-2 mt-1 {{ request()->is('orders') ? 'side-menu-active' : '' }}">
                     <i
                         class="fe fe-arrow-right fs-14 me-4 p-1 border-primary br-7 bg-primary-transparent text-primary"></i>
                     Order History </a>

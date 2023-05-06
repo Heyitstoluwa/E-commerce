@@ -7,6 +7,15 @@
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 
         <style>
+            a {
+                text-decoration: none !important;
+            }
+
+            td a b {
+                color: black;
+                font-size: 16px;
+            }
+
             #MenuItems li a {
                 font-weight: 600;
                 color: black;
@@ -91,33 +100,116 @@
             <div class="col-lg-3 col-md-3">
                 @include('layout.includes.menu')
             </div>
-            <div class="col-lg-8 col-md-8">
-                <div class="product-checkout">
-                    <div class="title">
-                        <h2 style="font-size: 15px">My Orders</h2>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <table class="table table-hover" id="">
-                                <thead>
-                                    <tr>
-                                        <th>S/N</th>
-                                        <th>Number of Products</th>
-                                        <th>Date</th>
-                                        <th>Amount</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+            @if ($mode == 'ORD')
+                <div class="col-lg-8 col-md-8">
+                    <div class="product-checkout">
+                        <div class="title">
+                            <h2 style="font-size: 15px">Order Details</h2>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Order Details</h4>
+                                <p>Order ID: <b>{{$order->unique_id}}</b></p>
+                                <p>Amount: <b class="text-success">₦{{ number_format($order->amount, 2) }}</b></p>
+                                <h4>Transaction Details</h4>
+                                <p>Status: <button class="btn btn-sm btn-success"><b class="text-capitalize">{{$transaction->status}}</b></button></p>
+                                <p>Reference: <b>{{$transaction->reference}}</b></p>
+
+                                <h4>Products</h4>
+                                <table class="table table-hover" id="">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th style="width: 10%"></th>
+                                            <th>Product</th>
+                                            <th>Amount</th>
+                                            <th>Size</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @isset($order_products)
+                                            @foreach ($order_products as $order_product)
+                                                <tr>
+                                                    <td>{{ $sn++ }}</td>
+                                                    <td>
+                                                        <div class="class-info">
+                                                            <a href="{{ route('product', $order_product->product->id) }}">
+                                                            <img
+                                                                src="{{ asset('products_images/' . $order_product->product->img->name) }}">
+                                                            </a>
+                                                            <div>
+                                                            {{-- <a href="{{ route('product', $order_product->product->id) }}">
+                                                                <p class="p-name">Name: <b>{{$order_product->product->name}}</b></p>
+                                                            </a> --}}
+                                                                {{-- <small class="small">Price: <b class="text-success">₦{{ number_format($order_product->amount, 2) }}</b></small><br>
+                                                                <small class="small">Size: <b>{{$order_product->size}}</b></small> --}}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                            <a href="{{ route('product', $order_product->product->id) }}">
+                                                                <b>{{$order_product->product->name}}</b>
+                                                            </a>
+                                                    </td>
+                                                    <td>
+                                                      <b class="text-success">₦{{ number_format($order_product->amount, 2) }}</b>
+                                                    </td>
+                                                    <td>
+                                                      {{$order_product->size}}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endisset
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @elseif($mode == 'ORR')
+                <div class="col-lg-8 col-md-8">
+                    <div class="product-checkout">
+                        <div class="title">
+                            <h2 style="font-size: 15px">My Orders</h2>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table table-hover" id="">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Order ID</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @isset($orders)
+                                            @foreach ($orders as $order)
+                                                <tr>
+                                                    <td>{{ $sn++ }}</td>
+                                                    <td><a href="{{ route('order', $order->unique_id) }}"><b
+                                                                class="text-uppercase">{{ $order->unique_id }}</b></a></td>
+                                                    <td><b class="text-success">₦{{ number_format($order->amount, 2) }}</b></td>
+                                                    <td>{{ $order->created_at->format('D, M j, Y h:i a') ?? '-' }}</td>
+                                                    <td>
+                                                        <a href="{{ route('order', $order->unique_id) }}"
+                                                            class="btn btn-sm btn-secondary">View</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endisset
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
-    <input type="hiddend" id="checkout-amount" readonly>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

@@ -137,6 +137,9 @@
     .search-text {
         background-color: #1d355747 !important;
     }
+    .jconfirm-title{
+        text-transform: capitalize; 
+    }
 
     /* #image_big_div {
         background-color: green;
@@ -153,6 +156,11 @@
         font-size: 12px;
         text-align: center;
     } */
+
+    .text-success{
+        color: green !important;
+        font-weight: 800 !important;
+    }
     #image_big_div {
         position: fixed;
         inset: 0 auto auto 0;

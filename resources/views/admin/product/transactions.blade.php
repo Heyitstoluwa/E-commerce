@@ -8,7 +8,7 @@
                         <div class="d-flex">
                             <div class="media mt-4">
                                 <div class="media-body">
-                                    <h6 class="mb-1 mt-1 font-weight-bold h3">User List</h6>
+                                    <h6 class="mb-1 mt-1 font-weight-bold h3">Transactions</h6>
                                     <small class="h5"></small>
                                 </div>
                             </div>
@@ -25,25 +25,36 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th class="sorting sorting_asc" style="">No</th>
-                                                    <th scope="row" class="sorting" style="">User Name </th>
-                                                    <th class="sorting" tabindex="0" style="">Email Address</th>
-                                                    <th class="sorting" tabindex="0" style="">Phone Number</th>
-                                                    <th class="sorting" tabindex="0" style="">Date Registered</th>
+                                                    <th scope="row" class="sorting" style="">Reference ID</th>
+                                                    <th class="sorting" tabindex="0" style="">Order ID</th>
+                                                    <th class="sorting" tabindex="0" style="">User</th>
+                                                    <th class="sorting" tabindex="0" style="">Amount</th>
+                                                    <th class="sorting" tabindex="0" style="">Status</th>
                                                     {{-- <th class="sorting" tabindex="0" style="">Action</th> --}}
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @isset($users)
-                                                    @foreach ($users as $user)
+                                                @isset($transactions)
+                                                    @foreach ($transactions as $transaction)
                                                         <tr class="">
                                                             <td class="sorting_1">{{ $sn++ }}</td>
-                                                            <td class="sorting_1"><a class="font-weight-bold"
-                                                                    href="{{ route('admin.user', $user->id) }}">{{ $user->name }}</a>
+                                                            <td class="sorting_1">
+                                                                <a class="font-weight-bold"
+                                                                    href="#">{{ $transaction->reference }}</a>
+                                                                </td>
+                                                            <td>
+                                                                <a class="font-weight-bold"
+                                                                    href="#">{{ $transaction->order->unique_id ?? "" }}</a>
                                                             </td>
-                                                            <td>{{ $user->email }}</td>
-                                                            <td>{{ $user->phone }}</td>
-                                                            <td>{{ $user->created_at->format('D, M j, Y h:i a') ?? '-' }} - 
-                                                                {{ $user->created_at->diffForHumans() }}
+                                                            <td>
+                                                                <a class="font-weight-bold"
+                                                                    href="#">{{ $transaction->user->name ?? "" }}</a>
+                                                            </td>
+                                                            <td>
+                                                                <b
+                                                                    class="text-success">₦{{ number_format($transaction->amount, 2) }}</b></td>
+                                                            <td>
+                                                                <button class="text-capitalize btn btn-sm btn-success">{{$transaction->status}}</button>
                                                             </td>
                                                             {{-- <td>
                                                                 <a href="{{ route('admin.user', $user->id) }}" class="btn btn-sm btn-primary">View</i></a>

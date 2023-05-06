@@ -23,7 +23,7 @@
         </script>
     @endpush
     <!----------Featured Product ---------->
-    <h2 class="title">All Products</h2>
+    <h2 class="title">Product Details</h2>
 
     <!------------- Featured Product ---------->
     <div class="small-containers single-product">
@@ -61,16 +61,16 @@
                 </select>
                 <div class="quantity">
                     <button class="plus-btn" type="button" name="button">
-                        <img src="plus.svg" alt="">+
+                        +
                     </button>
-                    <input type="text" name="productQuantity" id="productQuantity" value="1">
+                    <input type="text" name="productQuantity" id="productQuantity" value="1"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
                     <button class="minus-btn" type="button" name="button">
-                        <img src="minus.svg" alt="">-
+                        -
                     </button>
                 </div>
                 <span id="toCartText"></span>
                 <span id="toCartTextError"></span>
-                {{-- <input type="number" value="1"> --}}
                 <input type="hidden" value="{{ $product->quantity ?? 0 }}" name="quantity" id="quantity">
                 <input type="hidden" value="{{ $product->amount ?? 0 }}" name="price" id="price">
                 <input type="hidden" value="{{ $product->name ?? '' }}" name="productName" id="productName">
@@ -78,9 +78,14 @@
                 <div class="btn-group">
                     <a href="#" id="addCart" onclick="addToCart({{ $product->id ?? 0 }})" class="btn">Add
                         Cart</a>
-                    <a href="" class="btn">Buy Now</a>
+                    @auth
+                        <a href="#" class="btn" onclick="buyProduct() && buyWithPaystack({{ $product->amount }})">Buy
+                            Now</a>
+                    @else
+                        <a href="#" class="btn" onclick="alert('Sign in to proceed')">Buy Now</a>
+                    @endauth
                 </div>
-                <h3>Product Details<i class="fa fa-indent"></i></h3>
+                <h3>Product Description <i class="fa fa-indent"></i></h3>
                 <br>
                 <p>
                     {{ $product->details ?? '' }}

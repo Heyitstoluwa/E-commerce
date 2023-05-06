@@ -17,8 +17,6 @@
                 </select>
             </div>
         </div> --}}
-
-
         <div class="row">
             @if (isset($products))
                 @foreach ($products as $product)

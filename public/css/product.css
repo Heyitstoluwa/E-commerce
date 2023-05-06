@@ -89,9 +89,9 @@
 }
 
 button[class*="btn"] {
-    width: 30px;
-    height: 30px;
-    background-color: #e1e8ee;
+    /* width: 30px;
+    height: 30px; */
+    /* background-color: #e1e8ee; */
     border-radius: 6px;
     border: none;
     cursor: pointer;

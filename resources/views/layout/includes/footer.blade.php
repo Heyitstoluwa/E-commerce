@@ -8,15 +8,10 @@
                     <img src="{{ asset('images/play-store.png') }}">
                     <img src="{{ asset('images/app-store.png') }}">
                 </div>
-
             </div>
-
             <div class="footer-col-2">
                 <img src="{{ asset('images/QW.png') }}">
-
-
             </div>
-
             <div class="footer-col-3">
                 <h3> Useful Links</h3>
                 <ul>
@@ -25,12 +20,8 @@
                     <li> Join Affiliate </li>
                     <li> Blog post </li>
                 </ul>
-
             </div>
-
-
             <div class="footer-col-4">
-
                 <h3> Stay Connected </h3>
                 <ul>
                     <li> Facebook </li>
@@ -38,15 +29,9 @@
                     <li> Instagram </li>
                     <li> Youtube </li>
                 </ul>
-
             </div>
-
         </div>
         <hr>
-        <p class="copyright">Copyright 2022</p>
-
+        <p class="copyright">Copyright <span id="copyright-year">2022</span></p>
     </div>
-
-
-
 </div>

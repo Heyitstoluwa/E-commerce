@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Product;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -58,7 +63,26 @@ class UserController extends Controller
 
     public function orders()
     {
+        $data['mode'] = "ORR";
         $data['title'] = "Order History";
+        $data['sn'] = 1;
+        $data['orders'] = Order::where('user_id', Auth::user()->id)->orderBy('id', "DESC")->get();
+        return view('order-history', $data);
+    }
+
+    public function order($id)
+    {
+        $data['mode'] = "ORD";
+        $data['order'] = $order = Order::where(['user_id' => Auth::user()->id, 'unique_id' => $id])->first();
+        if (!$order) {
+            # code...
+            Session::flash('warning', 'No record found');
+            return redirect()->route('orders');
+        }
+        $data['transaction'] = Transaction::where('order_id', $order->id)->first();
+        $data['order_products'] = OrderDetail::where('order_id', $order->id)->with('product')->get();
+        $data['title'] = "Order Details";
+        $data['sn'] = 1;
         return view('order-history', $data);
     }
 
@@ -141,6 +165,54 @@ class UserController extends Controller
 
         // $data['title'] = "Account";
         // return view('account', $data);
+    }
+
+    public function save_order(Request $request)
+    {
+        try {
+            //code...
+            if ($_POST) {
+                # code...
+                // return $request->all();
+                $products = $request->allProducts;
+                $order = Order::create([
+                    "user_id" => Auth::user()->id,
+                    "amount" => $request->amount,
+                    "unique_id" => Str::random(10),
+                ]);
+                $transaction = Transaction::create([
+                    "user_id" => Auth::user()->id,
+                    "order_id" => $order->id,
+                    "amount" => $request->amount,
+                    "reference" => $request->reference,
+                    "status" => $request->status,
+                    "trxref" => $request->trxref,
+                ]);
+
+                $order->transaction_id = $transaction->id;
+                $order->save();
+
+                foreach ($products as $key => $value) {
+                    # code...
+                    $product = Product::find($value['id']);
+                    $product->quantity = $product->quantity - $value['quantity'];
+                    $product->save();
+
+                    $data = [
+                        "order_id" => $order->id,
+                        "product_id" => $value['id'],
+                        "amount" => $value['price'],
+                        "quantity" => $value['quantity'],
+                        "size" => $value['size'],
+                    ];
+                    OrderDetail::create($data);
+                }
+                return true;
+            }
+            return false;
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 
     public function logout()
