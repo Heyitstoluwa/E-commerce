@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <style>
+       <style>
         label {
             font-size: 16px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -11,8 +11,17 @@
             text-decoration: none
         }
 
-        .header {
-            background: radial-gradient(#fff, #ffd6d600);
+        .card {
+            border: 0px;
+            border-radius: 15px;
+            box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 10px;
+            /* Added */
+            top: 40%
         }
 
         h4 {
@@ -22,7 +31,7 @@
         }
 
         .form-control {
-            height: 40px;
+            height: 50 px;
             padding: 10px;
             font-size: 16px;
             color: gray !important;
@@ -31,8 +40,27 @@
             border: 1px solid #eee;
             border-radius: 3px;
         }
-    </style>
 
+        button {
+            /* width: 100%; */
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            background: #ff523b;
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        * {
+            box-sizing: content-box !important;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d600);
+        }
+    </style>
     <style>
         .title::after {
             content: "";
@@ -76,47 +104,37 @@
             margin: 0 auto;
             /* Added */
             float: none;
+            width: 400px;
             padding: 15px;
             /* Added */
             /* margin-bottom: 10px; */
             /* Added */
             top: 30%;
-            margin-top: 5%;
-            margin-bottom: 20%;
+            margin-top: 10%;
+            margin-bottom: 40%;
             /* text-align: center */
-        }
-
-        .mt-5{
-            margin-bottom: 10%;
         }
 
         .center {
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-            width: 50%
+            width: 30%
         }
-
-        .mt-5 {
+        .mt-5{
+            margin-bottom: 10%;
+        }
+        .text-center{
             text-align: center;
-            margin-bottom: 6%;
+            margin-bottom: 1rem;
         }
-         button {
-            /* width: 100%; */
-            margin-top: 10px;
-            padding: 10px;
-            border: none;
-            border-radius: 30px;
-            background: #ff523b;
-            color: #fff;
-            font-size: 15px;
-            font-weight: bold;
+        .mb-3{
+            margin-bottom: 10px
         }
-
     </style>
     <div class="container">
-        <div class="center">
-            <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="text-center mt-5">
                         <h4>Sign Up</h4>

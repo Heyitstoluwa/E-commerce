@@ -47,7 +47,7 @@
             
         }
     </style> --}}
-     <style>
+    <style>
         label {
             font-size: 16px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -55,6 +55,10 @@
 
         .btn-link {
             text-decoration: none
+        }
+
+        .btn {
+            margin: 10px
         }
 
         .card {
@@ -68,6 +72,10 @@
             margin-bottom: 10px;
             /* Added */
             top: 40%
+        }
+
+        .mb-3 {
+            margin-bottom: 10px
         }
 
         h4 {
@@ -167,10 +175,12 @@
             transform: translateX(-50%);
             width: 30%
         }
-        .mt-5{
+
+        .mt-5 {
             margin-bottom: 10%;
         }
-        .text-center{
+
+        .text-center {
             text-align: center;
             margin-bottom: 1rem;
         }
@@ -228,17 +238,19 @@
                                     </button>
 
                                 </div>
-                                {{-- @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                            </div>
+                            <div class="row">
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                                 <div class="text-center">
-                                    Don't have an accout? <a class="btn btn-link p-0 m-0" href="{{ route('register') }}">
+                                    Don't have an accout? <a class="btn-link p-0 m-0" href="{{ route('register') }}">
                                         {{ __('Create One') }}
                                     </a>
-                                </div> --}}
-
+                                </div>
                             </div>
                         </form>
                     </div>
